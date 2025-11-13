@@ -5,7 +5,7 @@ function AddTask(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   return (
-    <div className="bg-slate-200 p-6 rounded-md shadow-md">
+    <div className="bg-slate-900 p-6 rounded-md shadow-md">
       <h2 className="text-white text-2xl font-bold mb-4">Adicionar Tarefa</h2>
       <form
         className="flex flex-col gap-4"
