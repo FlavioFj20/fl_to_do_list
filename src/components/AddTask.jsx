@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Input from "./Input";
 
 function AddTask(props) {
   const [title, setTitle] = useState("");
@@ -12,7 +13,7 @@ function AddTask(props) {
           event.preventDefault();
         }}
       >
-        <input
+        {/* <input
           type="text"
           placeholder="Titulo da tarefa"
           className="py-2 px-4 rounded-md border border-slate-300 outline-slate-400"
@@ -24,7 +25,17 @@ function AddTask(props) {
           className="py-2 px-4 rounded-md border border-slate-300 outline-slate-400"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
-        ></textarea>
+        ></textarea> */}
+        <Input
+          placeholder="Titulo da tarefa"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+        <Input
+          placeholder="Descricao da tarefa"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
         <button
           type="submit"
           onClick={() => {

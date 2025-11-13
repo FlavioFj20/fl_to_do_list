@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
+import Title from "./components/Title"
 
 function App() {
   const [task, setTasks] = useState(
@@ -11,6 +12,25 @@ function App() {
   useEffect(() => {
     localStorage.setItem("task", JSON.stringify(task));
   }, [task]);
+
+  // useEffect(() => {
+  //   const fethTasks = async () => {
+  //     //Chamer a API
+  //     const response = await fetch(
+  //       "https://jsonplaceholder.typicode.com/users/1/todos?_limit=10",
+  //       {
+  //         method: "GET",
+  //       }
+  //     );
+  //     //Pegar os dados que a api retorna
+  //     const data = await response.json();
+
+  //     //Persistir os dados no states
+  //     setTasks(data);
+  //   };
+  //   //chamada da api para pegar as tarefas
+  //   fethTasks();
+  // }, []);
 
   function onTaskClick(taskId) {
     const newTasks = task.map((task) => {
@@ -40,11 +60,11 @@ function App() {
   }
 
   return (
-    <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
+    <div className="w-screen h-screen bg-slate-500 flex justify-center p-6 overflow-auto">
       <div className="w-[500px] space-y-4">
-        <h1 className="text-3xl text-slate-100 font-bold text-center">
+        <Title>
           Gerenciador de Tarefas
-        </h1>
+        </Title>
         <AddTask onTaskAddSubmit={onTaskAddSubmit} />
         <Tasks
           tasks={task}
