@@ -4,6 +4,8 @@ Uma aplicação simples de lista de tarefas (To‑Do) construída com React + Vi
 
 Este repositório contém um exemplo prático de app de tarefas com foco em componentes React, roteamento e estilização com TailwindCSS.
 
+Acesse a aplicação no [*Link*](https://to-do-lilst.vercel.app/).
+
 Principais tecnologias
 
 - React 18
